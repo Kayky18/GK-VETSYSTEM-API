@@ -27,6 +27,7 @@ func CreatePatients(ctx *gin.Context) {
 	patients.Breed = request.Breed
 	patients.Temperature = request.Temperature
 	patients.State = "Em tratamento"
+	patients.Species = request.Species
 
 	if err := db.Create(&patients).Error; err != nil {
 		logger.Errorf("ERROR CREATING DATABASE: %v", err)
