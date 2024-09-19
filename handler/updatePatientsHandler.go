@@ -59,6 +59,9 @@ func UpdatePatients(ctx *gin.Context) {
 	if request.Weight > 0 {
 		patients.Weight = request.Weight
 	}
+	if request.Species != "" {
+		patients.Species = request.Species
+	}
 
 	if err := db.Save(&patients).Error; err != nil {
 		sendError(ctx, http.StatusInternalServerError, "InternalServerError")
