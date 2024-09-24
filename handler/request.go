@@ -2,6 +2,8 @@ package handler
 
 import (
 	"fmt"
+
+	"github.com/Kayky18/GK_API/schemas"
 )
 
 type CreatePatientsRequest struct {
@@ -27,6 +29,21 @@ type UpdatePatientsRequest struct {
 	Breed       string  `json:"breed"`
 	Temperature float64 `json:"temperature"`
 	State       string  `json:"state"`
+}
+
+func (r *CreatePatientsRequest) ToSchema() *schemas.Patients {
+	return &schemas.Patients{
+		NameTutor:   r.NameTutor,
+		CPF:         r.CPF,
+		Phone:       r.Phone,
+		Name:        r.Name,
+		Species:     r.Species,
+		Age:         r.Age,
+		Weight:      r.Weight,
+		Breed:       r.Breed,
+		Temperature: r.Temperature,
+		State:       "Em tratamento",
+	}
 }
 
 func (request *UpdatePatientsRequest) Validate() error {

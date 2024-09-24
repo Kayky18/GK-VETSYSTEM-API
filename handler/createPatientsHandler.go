@@ -3,7 +3,6 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Kayky18/GK_API/schemas"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,31 +20,22 @@ import (
 // @Router /patient/create [post]
 func CreatePatients(ctx *gin.Context) {
 	request := CreatePatientsRequest{}
-	ctx.BindJSON(&request)
-
-	if err := request.Validate(); err != nil {
-		sendError(ctx, http.StatusBadRequest, err.Error())
-		return
+	err := ctx.ShouldBindJSON(&request)
+	if err != nil {
+		sendError(ctx, http.StatusInternalServerError, "error-to-bind-json")
 	}
 
-	patients := schemas.GetSchema()
-
-	// Create a new patient
-	patients.NameTutor = request.NameTutor
-	patients.CPF = request.CPF
-	patients.Phone = request.Phone
-	patients.Name = request.Name
-	patients.Age = request.Age
-	patients.Weight = request.Weight
-	patients.Breed = request.Breed
-	patients.Temperature = request.Temperature
-	patients.State = "Em tratamento"
-	patients.Species = request.Species
+	if err = request.Validate(); err != nil {
+		sendError(ctx, http.StatusBadRequest, "request-validate-error")
+		return
+	}
+	//Send to Schema
+	patients := request.ToSchema()
 
 	if err := db.Create(&patients).Error; err != nil {
-		logger.Errorf("ERROR CREATING DATABASE: %v", err)
-		sendError(ctx, http.StatusInternalServerError, "creating-error")
+		logger.Errorf("Error creating patient in database: %v", err.Error())
+		sendError(ctx, http.StatusInternalServerError, "database-creating-error")
 		return
 	}
-	sendSucess(ctx, "sucess-create", &patients)
+	sendSucess(ctx, "sucess-create-patient", &patients)
 }
