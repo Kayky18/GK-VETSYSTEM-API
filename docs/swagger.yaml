@@ -102,6 +102,10 @@ definitions:
         type: string
       cpf:
         type: string
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
       name:
         type: string
       nameTutor:
@@ -111,6 +115,8 @@ definitions:
       species:
         type: string
       state:
+        type: string
+      updatedAt:
         type: string
       weight:
         type: number

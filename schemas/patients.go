@@ -1,6 +1,10 @@
 package schemas
 
-import "gorm.io/gorm"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type Patients struct {
 	*gorm.Model
@@ -17,15 +21,18 @@ type Patients struct {
 
 }
 type PatientsResponse struct {
-	NameTutor string  `json:"nameTutor"`
-	CPF       string  `json:"cpf"`
-	Phone     string  `json:"phone"`
-	Name      string  `json:"name"`
-	Species   string  `json:"species"`
-	Age       int     `json:"age"`
-	Weight    float64 `json:"weight"`
-	Breed     string  `json:"breed"`
-	State     string  `json:"state"`
+	NameTutor string    `json:"nameTutor"`
+	CPF       string    `json:"cpf"`
+	Phone     string    `json:"phone"`
+	CreatedAt time.Time `json:"createdAt"`
+	UpdatedAt time.Time `json:"updatedAt"`
+	DeletedAt time.Time `json:"deletedAt"`
+	Name      string    `json:"name"`
+	Species   string    `json:"species"`
+	Age       int       `json:"age"`
+	Weight    float64   `json:"weight"`
+	Breed     string    `json:"breed"`
+	State     string    `json:"state"`
 }
 
 func GetSchema() *Patients {

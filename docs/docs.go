@@ -399,6 +399,12 @@ const docTemplate = `{
                 "cpf": {
                     "type": "string"
                 },
+                "createdAt": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "type": "string"
+                },
                 "name": {
                     "type": "string"
                 },
@@ -412,6 +418,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "state": {
+                    "type": "string"
+                },
+                "updatedAt": {
                     "type": "string"
                 },
                 "weight": {
