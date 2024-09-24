@@ -7,6 +7,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/v1
+
+// @Summary Delete Patient
+// @Description Delete a Patient
+// @Tags Patients
+// @Accept json
+// @Produce json
+// @Param id path string true "Patient identification"
+// @Success 200 {object} DeletePatientsReponse
+// @Failure 404  {object} ErrorResponse
+// @Router /patient/{id} [delete]
 func DeletePatients(ctx *gin.Context) {
 	// Get the patient ID from the URL parameter
 	id := ctx.Param("id")

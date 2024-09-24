@@ -16,6 +16,17 @@ type Patients struct {
 	State       string  //State in clinic
 
 }
+type PatientsResponse struct {
+	NameTutor string  `json:"nameTutor"`
+	CPF       string  `json:"cpf"`
+	Phone     string  `json:"phone"`
+	Name      string  `json:"name"`
+	Species   string  `json:"species"`
+	Age       int     `json:"age"`
+	Weight    float64 `json:"weight"`
+	Breed     string  `json:"breed"`
+	State     string  `json:"state"`
+}
 
 func GetSchema() *Patients {
 	return &Patients{}

@@ -40,5 +40,5 @@ func (request *CreatePatientsRequest) Validate() error {
 	if request.NameTutor != "" && request.Age > 0 && request.CPF != "" && request.Name != "" && request.Phone != "" && request.Species != "" {
 		return nil
 	}
-	return fmt.Errorf("name tutor, age, cpf, animal name and phone must be provided")
+	return fmt.Errorf("name tutor,species, age, cpf, animal name and phone must be provided. Or some invalid type")
 }

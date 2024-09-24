@@ -7,6 +7,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/v1
+
+// @Summary Create Patient
+// @Description Create a new Patient
+// @Tags Patients
+// @Accept json
+// @Produce json
+// @Param request body CreatePatientsRequest true "Request Body"
+// @Success 200 {object} CreatePatientsReponse
+// @Failure 400  {object} ErrorResponse
+// @Failure 500  {object} ErrorResponse
+// @Router /patient/create [post]
 func CreatePatients(ctx *gin.Context) {
 	request := CreatePatientsRequest{}
 	ctx.BindJSON(&request)
@@ -15,9 +27,10 @@ func CreatePatients(ctx *gin.Context) {
 		sendError(ctx, http.StatusBadRequest, err.Error())
 		return
 	}
+
 	patients := schemas.GetSchema()
+
 	// Create a new patient
-	patients.Name = request.NameTutor
 	patients.NameTutor = request.NameTutor
 	patients.CPF = request.CPF
 	patients.Phone = request.Phone

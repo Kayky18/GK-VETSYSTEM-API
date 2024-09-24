@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/Kayky18/GK_API/schemas"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,4 +22,33 @@ func sendError(ctx *gin.Context, code int, msg string) {
 		"message": msg,
 		"code":    code,
 	})
+}
+
+type ErrorResponse struct {
+	Message   string `json:"message"`
+	Errorcode int    `json:"code"`
+}
+type CreatePatientsReponse struct {
+	Message string                   `json:"message"`
+	Data    schemas.PatientsResponse `json:"data"`
+}
+type DeletePatientsReponse struct {
+	Message string                   `json:"message"`
+	Data    schemas.PatientsResponse `json:"data"`
+}
+type ListPatientsReponse struct {
+	Message string                     `json:"message"`
+	Data    []schemas.PatientsResponse `json:"data"`
+}
+type BadRequestPatientsReponse struct {
+	Message string                   `json:"message"`
+	Data    schemas.PatientsResponse `json:"data"`
+}
+type ShowPatientsReponse struct {
+	Message string                   `json:"message"`
+	Data    schemas.PatientsResponse `json:"data"`
+}
+type UpdatePatientsReponse struct {
+	Message string                   `json:"message"`
+	Data    schemas.PatientsResponse `json:"data"`
 }

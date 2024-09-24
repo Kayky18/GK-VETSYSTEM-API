@@ -1,0 +1,264 @@
+definitions:
+  handler.BadRequestPatientsReponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PatientsResponse'
+      message:
+        type: string
+    type: object
+  handler.CreatePatientsReponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PatientsResponse'
+      message:
+        type: string
+    type: object
+  handler.CreatePatientsRequest:
+    properties:
+      age:
+        type: integer
+      breed:
+        type: string
+      cpf:
+        type: string
+      name:
+        type: string
+      nameTutor:
+        type: string
+      phone:
+        type: string
+      species:
+        type: string
+      temperature:
+        type: number
+      weight:
+        type: number
+    type: object
+  handler.DeletePatientsReponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PatientsResponse'
+      message:
+        type: string
+    type: object
+  handler.ErrorResponse:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+  handler.ListPatientsReponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.PatientsResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ShowPatientsReponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PatientsResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdatePatientsReponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PatientsResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdatePatientsRequest:
+    properties:
+      age:
+        type: integer
+      breed:
+        type: string
+      cpf:
+        type: string
+      name:
+        type: string
+      nameTutor:
+        type: string
+      phone:
+        type: string
+      species:
+        type: string
+      state:
+        type: string
+      temperature:
+        type: number
+      weight:
+        type: number
+    type: object
+  schemas.PatientsResponse:
+    properties:
+      age:
+        type: integer
+      breed:
+        type: string
+      cpf:
+        type: string
+      name:
+        type: string
+      nameTutor:
+        type: string
+      phone:
+        type: string
+      species:
+        type: string
+      state:
+        type: string
+      weight:
+        type: number
+    type: object
+info:
+  contact: {}
+paths:
+  /patient:
+    get:
+      consumes:
+      - application/json
+      description: Bad Request Patient
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.BadRequestPatientsReponse'
+      summary: Bad Request Patient
+      tags:
+      - Patients
+  /patient/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a Patient
+      parameters:
+      - description: Patient identification
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeletePatientsReponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Delete Patient
+      tags:
+      - Patients
+    get:
+      consumes:
+      - application/json
+      description: List Patients
+      parameters:
+      - description: Patient identification
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowPatientsReponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: List Patients
+      tags:
+      - Patients
+    put:
+      consumes:
+      - application/json
+      description: Update Patient
+      parameters:
+      - description: Patient identification
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Request Body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdatePatientsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.UpdatePatientsReponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Update Patient
+      tags:
+      - Patients
+  /patient/create:
+    post:
+      consumes:
+      - application/json
+      description: Create a new Patient
+      parameters:
+      - description: Request Body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreatePatientsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.CreatePatientsReponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Create Patient
+      tags:
+      - Patients
+  /patients:
+    get:
+      consumes:
+      - application/json
+      description: List Patients
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListPatientsReponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: List Patients
+      tags:
+      - Patients
+swagger: "2.0"

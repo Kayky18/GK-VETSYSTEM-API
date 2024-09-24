@@ -7,6 +7,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @BasePath /api/v1
+
+// @Summary Update Patient
+// @Description Update Patient
+// @Tags Patients
+// @Accept json
+// @Produce json
+// @Param id path string true "Patient identification"
+// @Param request body UpdatePatientsRequest true "Request Body"
+// @Success 200 {object} UpdatePatientsReponse
+// @Failure 400  {object} ErrorResponse
+// @Router /patient/{id} [put]
 func UpdatePatients(ctx *gin.Context) {
 	// Get the patient ID from the URL parameter
 	id := ctx.Param("id")
