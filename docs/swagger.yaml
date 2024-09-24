@@ -167,7 +167,7 @@ paths:
     get:
       consumes:
       - application/json
-      description: List Patients
+      description: Show a Patient
       parameters:
       - description: Patient identification
         in: path
@@ -185,7 +185,7 @@ paths:
           description: Bad Request
           schema:
             $ref: '#/definitions/handler.ErrorResponse'
-      summary: List Patients
+      summary: Show a Patient
       tags:
       - Patients
     put:

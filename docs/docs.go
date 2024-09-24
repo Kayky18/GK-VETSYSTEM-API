@@ -86,7 +86,7 @@ const docTemplate = `{
         },
         "/patient/{id}": {
             "get": {
-                "description": "List Patients",
+                "description": "Show a Patient",
                 "consumes": [
                     "application/json"
                 ],
@@ -96,7 +96,7 @@ const docTemplate = `{
                 "tags": [
                     "Patients"
                 ],
-                "summary": "List Patients",
+                "summary": "Show a Patient",
                 "parameters": [
                     {
                         "type": "string",

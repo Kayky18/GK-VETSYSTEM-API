@@ -9,8 +9,8 @@ import (
 
 // @BasePath /api/v1
 
-// @Summary List Patients
-// @Description List Patients
+// @Summary Show a Patient
+// @Description Show a Patient
 // @Tags Patients
 // @Accept json
 // @Produce json
