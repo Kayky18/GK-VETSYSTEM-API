@@ -1,8 +1,8 @@
 package router
 
 import (
-	docs "github.com/Kayky18/GK_API/docs"
-	"github.com/Kayky18/GK_API/handler"
+	docs "github.com/Kayky18/GK-VETSYSTEM-API/docs"
+	"github.com/Kayky18/GK-VETSYSTEM-API/handler"
 	"github.com/gin-gonic/gin"
 	swaggerfiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"

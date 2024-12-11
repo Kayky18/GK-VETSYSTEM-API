@@ -29,6 +29,7 @@ func CreatePatients(ctx *gin.Context) {
 		sendError(ctx, http.StatusBadRequest, "request-validate-error")
 		return
 	}
+
 	//Send to Schema
 	patients := request.ToSchema()
 

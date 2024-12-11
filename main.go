@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/Kayky18/GK_API/config"
-	"github.com/Kayky18/GK_API/router"
+	"github.com/Kayky18/GK-VETSYSTEM-API/config"
+	"github.com/Kayky18/GK-VETSYSTEM-API/router"
 )
 
 var (

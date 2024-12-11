@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/Kayky18/GK_API/schemas"
+	"github.com/Kayky18/GK-VETSYSTEM-API/schemas"
 	"github.com/gin-gonic/gin"
 )
 

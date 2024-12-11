@@ -3,7 +3,7 @@ package handler
 import (
 	"fmt"
 
-	"github.com/Kayky18/GK_API/schemas"
+	"github.com/Kayky18/GK-VETSYSTEM-API/schemas"
 )
 
 type CreatePatientsRequest struct {

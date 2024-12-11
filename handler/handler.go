@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/Kayky18/GK_API/config"
+	"github.com/Kayky18/GK-VETSYSTEM-API/config"
 	"gorm.io/gorm"
 )
 
