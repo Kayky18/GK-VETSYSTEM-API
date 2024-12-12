@@ -1,7 +1,3 @@
-Aqui está um exemplo de um README para o seu projeto com base no código que você forneceu:
-
----
-
 # VetSystem API
 
 ## Descrição
