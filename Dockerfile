@@ -4,7 +4,8 @@ WORKDIR /usr/src/
 
 COPY . .
 
-go 
+EXPOSE 8080
 
-RUN go run main.go
+
+
 
