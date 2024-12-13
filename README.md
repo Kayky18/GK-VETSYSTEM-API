@@ -6,6 +6,11 @@ A **VetSystem API** é uma API REST que permite gerenciar pacientes (animais) em
 
 ## Endpoints
 
+### Base Path
+- /api/v1/
+- **Exemplo:**
+  - `127.0.0.1/api/v1/patients`
+
 ### 1. Listar Pacientes
 - **Endpoint:** `GET /patients`
 - **Descrição:** Lista todos os pacientes cadastrados no sistema.
@@ -94,6 +99,10 @@ As respostas da API seguem um formato padrão com os campos:
   "message": "Mensagem sobre a operação realizada"
 }
 ```
+
+##  Swagger
+- `http://127.0.0.1:8080/swagger/index.html`
+- **Descrição:** Executar testes e verificar a documentação no swagger.
 
 ## Execução com Docker Compose
 
