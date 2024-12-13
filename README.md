@@ -95,6 +95,10 @@ As respostas da API seguem um formato padrão com os campos:
 }
 ```
 
+##  Swagger
+- `http://127.0.0.1:8080/swagger/index.html`
+- **Descrição:** Executar testes e verificar a documentação no swagger.
+
 ## Execução com Docker Compose
 
 Para executar a API utilizando Docker Compose, siga os seguintes passos:
