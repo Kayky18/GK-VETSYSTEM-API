@@ -6,6 +6,11 @@ A **VetSystem API** é uma API REST que permite gerenciar pacientes (animais) em
 
 ## Endpoints
 
+### Base Path
+- /api/v1/
+- **Exemplo:**
+  - `127.0.0.1/api/v1/patients`
+
 ### 1. Listar Pacientes
 - **Endpoint:** `GET /patients`
 - **Descrição:** Lista todos os pacientes cadastrados no sistema.
