@@ -9,7 +9,7 @@ A **VetSystem API** é uma API REST que permite gerenciar pacientes (animais) em
 ### Base Path
 - /api/v1/
 - **Exemplo:**
-  - `127.0.0.1/api/v1/patients`
+  - `http://localhost/api/v1/patients`
 
 ### 1. Listar Pacientes
 - **Endpoint:** `GET /patients`
@@ -101,7 +101,7 @@ As respostas da API seguem um formato padrão com os campos:
 ```
 
 ##  Swagger
-- `http://127.0.0.1:8080/swagger/index.html`
+- `http://localhost/swagger/index.html`
 - **Descrição:** Executar testes e verificar a documentação no swagger.
 
 ## Execução com Docker Compose
@@ -122,7 +122,7 @@ Para executar a API utilizando Docker Compose, siga os seguintes passos:
      api_gk:
        image: gk-vetsystem
        ports:
-         - "8080:8080"
+         - "80:8080"
        command: go run main.go
    ```
    Para iniciar a API:
@@ -131,7 +131,7 @@ Para executar a API utilizando Docker Compose, siga os seguintes passos:
    ```
 
 3. **Acessar a API:**
-   Acesse a API via `http://localhost:8080`.
+   Acesse a API via `http://localhost:80`.
 
 ## Tecnologias Utilizadas
 
