@@ -4,8 +4,6 @@ WORKDIR /usr/src/
 
 COPY . .
 
-EXPOSE 8080
-
 
 
 
