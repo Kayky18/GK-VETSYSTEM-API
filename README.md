@@ -284,7 +284,7 @@ Para executar a API utilizando Docker Compose, siga os seguintes passos:
    ```
    Para iniciar a API:
    ```bash
-   docker-compose up
+   docker compose up
    ```
 
 3. **Acessar a API:**
