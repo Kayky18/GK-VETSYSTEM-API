@@ -15,29 +15,6 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/patient": {
-            "get": {
-                "description": "Bad Request Patient",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Patients"
-                ],
-                "summary": "Bad Request Patient",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/handler.BadRequestPatientsReponse"
-                        }
-                    }
-                }
-            }
-        },
         "/patient/create": {
             "post": {
                 "description": "Create a new Patient",
@@ -240,17 +217,6 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "handler.BadRequestPatientsReponse": {
-            "type": "object",
-            "properties": {
-                "data": {
-                    "$ref": "#/definitions/schemas.PatientsResponse"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
         "handler.CreatePatientsReponse": {
             "type": "object",
             "properties": {
