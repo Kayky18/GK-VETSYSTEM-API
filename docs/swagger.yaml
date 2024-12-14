@@ -1,11 +1,4 @@
 definitions:
-  handler.BadRequestPatientsReponse:
-    properties:
-      data:
-        $ref: '#/definitions/schemas.PatientsResponse'
-      message:
-        type: string
-    type: object
   handler.CreatePatientsReponse:
     properties:
       data:
@@ -124,21 +117,6 @@ definitions:
 info:
   contact: {}
 paths:
-  /patient:
-    get:
-      consumes:
-      - application/json
-      description: Bad Request Patient
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/handler.BadRequestPatientsReponse'
-      summary: Bad Request Patient
-      tags:
-      - Patients
   /patient/{id}:
     delete:
       consumes:
